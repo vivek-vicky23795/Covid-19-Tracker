@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Covid-19 Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+
+    <!--  The Nav Bar Starts Here.............. -->
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark mb-1">
+
+        <!-- Navbar Brand starts here -->
+        <a class="navbar-brand ms-2 mb-3" href="#">
+            <img id="covid" src="cv5.png" alt="covid-19" width="35" height="30"
+                class="d-inline-block align-text-top">
+            <span class="ms-2">Covid-19 DashBoard</span>
+        </a>
+        <!-- Navbar Brand Ends here  -->
+
+        <!-- Sidebar Toggle starts here -->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 ms-3 mb-3" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+        <!-- Sidebar Toggle ends here -->
+    </nav>
+
+    <!-- The Nav Bar Ends Here.................... -->
+
+
+    <!--  The Main Section Starts Here....... -->
+    <div id="layoutSidenav">
+
+
+        <!-- The layoutSidenav_nav Starts here..... -->
+        <div id="layoutSidenav_nav">
+            <!-- The Sidebar Nav sb-sidenav accordion sb-sidenav-dark Starts here -->
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+
+                    <div class="nav">
+
+                        <!-- 1. sidebar menu item -->
+                        <div class="sb-sidenav-menu-heading">Covid-19</div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                    </div>
+
+                </div>
+            </nav>
+            <!-- The Sidebar Nav sb-sidenav accordion sb-sidenav-dark Ends here -->
+
+        </div>
+        <!-- The layoutSidenav_nav Ends here..... -->
+
+
+
+        <!-- The layoutSidenav_content Starts Here -->
+        <div id="layoutSidenav_content">
+            <!-- The Main Section  Area Starts Here..... -->
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4"> INDIA (COVID-19) Dashboard-(Vivek MH)</h1>
+                    <h4><span style="color:tomato;"><i class="fas fa-circle fa-xs"></i> LIVE TRACKING DATA </span></h4>
+                    <ol class="breadcrumb mb-4">
+                        <!-- <li class="breadcrumb-item">India Covid-19 Today's count </li>
+                        <li class="breadcrumb-item"> Today's Date and Time </li> -->
+                        <span class="me-5">
+                            <h5 id="date">Date</h5>
+                        </span>
+                        <span>
+                            <h5 id="time">Time</h5>
+                        </span>
+                    </ol>
+
+                    <div class="row">
+
+                        <!-- Card-1 Ends Here -->
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-primary text-white mb-4">
+                                <h5 class="card-header">Confirmed Cases</i></h5>
+                                <div class="card-body">
+                                    <h3 id="card1">0</h3>
+                                    <div class="small text-black text-center">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card-1  Ends here-->
+
+
+                        <!-- Card-2  starts here-->
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-warning mb-4">
+                                <h5 class="card-header"><span>Active Cases</span></h5>
+                                <div class="card-body">
+                                    <h3 id="card2">0</h3>
+                                    <div class="small text-black"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card-2  Ends here-->
+
+
+                        <!-- Card-3 -->
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-success text-white mb-4">
+                                <h5 class="card-header">Recovered Cases</i></h5>
+                                <div class="card-body">
+                                    <h3 id="card3">0</h3>
+                                    <div class="small text-black"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card-3  Ends here-->
+
+
+
+                        <!-- Card-4 -->
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-danger text-white mb-4">
+                                <h5 class="card-header">Death Cases</i></h5>
+                                <div class="card-body">
+                                    <h3 id="card4">0</h3>
+                                    <div class="small text-black"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card-4  Ends here-->
+
+
+                        <!-- <div class="row">
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-area me-1"></i>
+                                        Area Chart Example
+                                    </div>
+                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar me-1"></i>
+                                        Bar Chart Example
+                                    </div>
+                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                         </div> -->
+
+                        <!-- The Table Section Starts Here...... -->
+
+
+                        <div class="card mb-4 border border-danger border-2">
+                            <div class="card-header mt-2 border border-info border-2">
+                                <i class="fas fa-table me-1"></i>
+                                Covid-19 State wise Data
+                            </div>
+
+                            <div class="card-body p-0 overflow-scroll">
+
+                                <table class="table table-responsive  table-bordered border-dark table-striped overflow-auto mt-2">
+                                    <thead>
+                                        <tr>
+                                            <th>STATES</th>
+                                            <th>TOTAL CASE CONFIRMED</th>
+                                            <th>ACTIVE CASES</th>
+                                            <th>RECOVERED</th>
+                                            <th>DEATH</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="tbody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <!-- The Table Section Starts Here...... -->
+
+                    </div>
+            </main>
+            <!-- The Main Section Area  Ends Here... -->
+
+
+            <!--  The Footer Section Starts Here...... -->
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Developed By VIVEK M H</div>
+
+                    </div>
+                </div>
+            </footer>
+            <!-- The Footer section Ends Here.... -->
+        </div>
+        <!-- The layoutSidenav_content Ends Here -->
+
+
+
+
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+
+</html>
